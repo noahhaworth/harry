@@ -1,0 +1,8 @@
+prefix=/home/nwhu/catkin_ws/install
+
+Name: yobotics_teleop
+Description: Description of yobotics_teleop
+Version: 0.6.2
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

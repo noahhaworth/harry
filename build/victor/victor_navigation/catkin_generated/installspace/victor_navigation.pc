@@ -1,0 +1,8 @@
+prefix=/home/nwhu/catkin_ws/install
+
+Name: victor_navigation
+Description: Description of victor_navigation
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

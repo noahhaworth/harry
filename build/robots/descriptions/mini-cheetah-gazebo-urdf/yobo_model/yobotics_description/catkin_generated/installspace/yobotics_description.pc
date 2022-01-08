@@ -1,0 +1,8 @@
+prefix=/home/nwhu/catkin_ws/install
+
+Name: yobotics_description
+Description: Description of yobotics_description
+Version: 0.1.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
