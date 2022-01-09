@@ -7,21 +7,6 @@ champ/champ_base/CMakeFiles/quadruped_controller.dir/src/quadruped_controller.cp
  /home/nwhu/catkin_ws/devel/include/champ_msgs/Point.h
  /home/nwhu/catkin_ws/devel/include/champ_msgs/PointArray.h
  /home/nwhu/catkin_ws/devel/include/champ_msgs/Pose.h
- /home/nwhu/catkin_ws/src/champ/champ/include/champ/bla/basic_linear_algebra.h
- /home/nwhu/catkin_ws/src/champ/champ/include/champ/bla/memory_delegate.h
- /home/nwhu/catkin_ws/src/champ/champ/include/champ/body_controller/body_controller.h
- /home/nwhu/catkin_ws/src/champ/champ/include/champ/geometry/geometry.h
- /home/nwhu/catkin_ws/src/champ/champ/include/champ/kinematics/kinematics.h
- /home/nwhu/catkin_ws/src/champ/champ/include/champ/leg_controller/leg_controller.h
- /home/nwhu/catkin_ws/src/champ/champ/include/champ/leg_controller/phase_generator.h
- /home/nwhu/catkin_ws/src/champ/champ/include/champ/leg_controller/trajectory_planner.h
- /home/nwhu/catkin_ws/src/champ/champ/include/champ/macros/macros.h
- /home/nwhu/catkin_ws/src/champ/champ/include/champ/quadruped_base/quadruped_base.h
- /home/nwhu/catkin_ws/src/champ/champ/include/champ/quadruped_base/quadruped_components.h
- /home/nwhu/catkin_ws/src/champ/champ/include/champ/quadruped_base/quadruped_joint.h
- /home/nwhu/catkin_ws/src/champ/champ/include/champ/quadruped_base/quadruped_leg.h
- /home/nwhu/catkin_ws/src/champ/champ/include/champ/utils/urdf_loader.h
- /home/nwhu/catkin_ws/src/champ/champ/include/champ/utils/xmlrpc_helpers.h
  /home/nwhu/catkin_ws/src/champ/champ_base/include/quadruped_controller.h
  /home/nwhu/catkin_ws/src/champ/champ_base/src/quadruped_controller.cpp
  /opt/ros/melodic/include/geometry_msgs/Point.h
@@ -103,8 +88,5 @@ champ/champ_base/CMakeFiles/quadruped_controller.dir/src/quadruped_controller.cp
  /opt/ros/melodic/include/tf/transform_datatypes.h
  /opt/ros/melodic/include/trajectory_msgs/JointTrajectory.h
  /opt/ros/melodic/include/trajectory_msgs/JointTrajectoryPoint.h
- /opt/ros/melodic/include/urdf/model.h
- /opt/ros/melodic/include/urdf/urdfdom_compatibility.h
- /opt/ros/melodic/include/urdf/visibility_control.hpp
  /opt/ros/melodic/include/xmlrpcpp/XmlRpcDecl.h
  /opt/ros/melodic/include/xmlrpcpp/XmlRpcValue.h

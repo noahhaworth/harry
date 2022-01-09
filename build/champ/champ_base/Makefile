@@ -66,6 +66,53 @@ list_install_components/fast: list_install_components
 
 .PHONY : list_install_components/fast
 
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
+
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
+
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -87,53 +134,6 @@ test:
 test/fast: test
 
 .PHONY : test/fast
-
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install
-
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
-
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
-
-# Special rule for the target install/local
-install/local/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local/fast
-
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -183,21 +183,6 @@ state_estimation_node/fast:
 .PHONY : state_estimation_node/fast
 
 # Convenience name for target.
-champ/champ_base/CMakeFiles/message_relay_node.dir/rule:
-	cd /home/nwhu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 champ/champ_base/CMakeFiles/message_relay_node.dir/rule
-.PHONY : champ/champ_base/CMakeFiles/message_relay_node.dir/rule
-
-# Convenience name for target.
-message_relay_node: champ/champ_base/CMakeFiles/message_relay_node.dir/rule
-
-.PHONY : message_relay_node
-
-# fast build rule for target.
-message_relay_node/fast:
-	cd /home/nwhu/catkin_ws/build && $(MAKE) -f champ/champ_base/CMakeFiles/message_relay_node.dir/build.make champ/champ_base/CMakeFiles/message_relay_node.dir/build
-.PHONY : message_relay_node/fast
-
-# Convenience name for target.
 champ/champ_base/CMakeFiles/state_estimation.dir/rule:
 	cd /home/nwhu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 champ/champ_base/CMakeFiles/state_estimation.dir/rule
 .PHONY : champ/champ_base/CMakeFiles/state_estimation.dir/rule
@@ -211,66 +196,6 @@ state_estimation: champ/champ_base/CMakeFiles/state_estimation.dir/rule
 state_estimation/fast:
 	cd /home/nwhu/catkin_ws/build && $(MAKE) -f champ/champ_base/CMakeFiles/state_estimation.dir/build.make champ/champ_base/CMakeFiles/state_estimation.dir/build
 .PHONY : state_estimation/fast
-
-# Convenience name for target.
-champ/champ_base/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/rule:
-	cd /home/nwhu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 champ/champ_base/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/rule
-.PHONY : champ/champ_base/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-tf2_msgs_generate_messages_lisp: champ/champ_base/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : tf2_msgs_generate_messages_lisp
-
-# fast build rule for target.
-tf2_msgs_generate_messages_lisp/fast:
-	cd /home/nwhu/catkin_ws/build && $(MAKE) -f champ/champ_base/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/build.make champ/champ_base/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/build
-.PHONY : tf2_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-champ/champ_base/CMakeFiles/tf_generate_messages_cpp.dir/rule:
-	cd /home/nwhu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 champ/champ_base/CMakeFiles/tf_generate_messages_cpp.dir/rule
-.PHONY : champ/champ_base/CMakeFiles/tf_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-tf_generate_messages_cpp: champ/champ_base/CMakeFiles/tf_generate_messages_cpp.dir/rule
-
-.PHONY : tf_generate_messages_cpp
-
-# fast build rule for target.
-tf_generate_messages_cpp/fast:
-	cd /home/nwhu/catkin_ws/build && $(MAKE) -f champ/champ_base/CMakeFiles/tf_generate_messages_cpp.dir/build.make champ/champ_base/CMakeFiles/tf_generate_messages_cpp.dir/build
-.PHONY : tf_generate_messages_cpp/fast
-
-# Convenience name for target.
-champ/champ_base/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/rule:
-	cd /home/nwhu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 champ/champ_base/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/rule
-.PHONY : champ/champ_base/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-trajectory_msgs_generate_messages_lisp: champ/champ_base/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : trajectory_msgs_generate_messages_lisp
-
-# fast build rule for target.
-trajectory_msgs_generate_messages_lisp/fast:
-	cd /home/nwhu/catkin_ws/build && $(MAKE) -f champ/champ_base/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/build.make champ/champ_base/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/build
-.PHONY : trajectory_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-champ/champ_base/CMakeFiles/tf_generate_messages_eus.dir/rule:
-	cd /home/nwhu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 champ/champ_base/CMakeFiles/tf_generate_messages_eus.dir/rule
-.PHONY : champ/champ_base/CMakeFiles/tf_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-tf_generate_messages_eus: champ/champ_base/CMakeFiles/tf_generate_messages_eus.dir/rule
-
-.PHONY : tf_generate_messages_eus
-
-# fast build rule for target.
-tf_generate_messages_eus/fast:
-	cd /home/nwhu/catkin_ws/build && $(MAKE) -f champ/champ_base/CMakeFiles/tf_generate_messages_eus.dir/build.make champ/champ_base/CMakeFiles/tf_generate_messages_eus.dir/build
-.PHONY : tf_generate_messages_eus/fast
 
 # Convenience name for target.
 champ/champ_base/CMakeFiles/message_relay.dir/rule:
@@ -288,6 +213,21 @@ message_relay/fast:
 .PHONY : message_relay/fast
 
 # Convenience name for target.
+champ/champ_base/CMakeFiles/tf2_msgs_generate_messages_nodejs.dir/rule:
+	cd /home/nwhu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 champ/champ_base/CMakeFiles/tf2_msgs_generate_messages_nodejs.dir/rule
+.PHONY : champ/champ_base/CMakeFiles/tf2_msgs_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+tf2_msgs_generate_messages_nodejs: champ/champ_base/CMakeFiles/tf2_msgs_generate_messages_nodejs.dir/rule
+
+.PHONY : tf2_msgs_generate_messages_nodejs
+
+# fast build rule for target.
+tf2_msgs_generate_messages_nodejs/fast:
+	cd /home/nwhu/catkin_ws/build && $(MAKE) -f champ/champ_base/CMakeFiles/tf2_msgs_generate_messages_nodejs.dir/build.make champ/champ_base/CMakeFiles/tf2_msgs_generate_messages_nodejs.dir/build
+.PHONY : tf2_msgs_generate_messages_nodejs/fast
+
+# Convenience name for target.
 champ/champ_base/CMakeFiles/tf2_msgs_generate_messages_py.dir/rule:
 	cd /home/nwhu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 champ/champ_base/CMakeFiles/tf2_msgs_generate_messages_py.dir/rule
 .PHONY : champ/champ_base/CMakeFiles/tf2_msgs_generate_messages_py.dir/rule
@@ -303,64 +243,19 @@ tf2_msgs_generate_messages_py/fast:
 .PHONY : tf2_msgs_generate_messages_py/fast
 
 # Convenience name for target.
-champ/champ_base/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/nwhu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 champ/champ_base/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/rule
-.PHONY : champ/champ_base/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/rule
+champ/champ_base/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/rule:
+	cd /home/nwhu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 champ/champ_base/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/rule
+.PHONY : champ/champ_base/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
-trajectory_msgs_generate_messages_nodejs: champ/champ_base/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/rule
+tf2_msgs_generate_messages_lisp: champ/champ_base/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/rule
 
-.PHONY : trajectory_msgs_generate_messages_nodejs
+.PHONY : tf2_msgs_generate_messages_lisp
 
 # fast build rule for target.
-trajectory_msgs_generate_messages_nodejs/fast:
-	cd /home/nwhu/catkin_ws/build && $(MAKE) -f champ/champ_base/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/build.make champ/champ_base/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/build
-.PHONY : trajectory_msgs_generate_messages_nodejs/fast
-
-# Convenience name for target.
-champ/champ_base/CMakeFiles/actionlib_generate_messages_cpp.dir/rule:
-	cd /home/nwhu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 champ/champ_base/CMakeFiles/actionlib_generate_messages_cpp.dir/rule
-.PHONY : champ/champ_base/CMakeFiles/actionlib_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-actionlib_generate_messages_cpp: champ/champ_base/CMakeFiles/actionlib_generate_messages_cpp.dir/rule
-
-.PHONY : actionlib_generate_messages_cpp
-
-# fast build rule for target.
-actionlib_generate_messages_cpp/fast:
-	cd /home/nwhu/catkin_ws/build && $(MAKE) -f champ/champ_base/CMakeFiles/actionlib_generate_messages_cpp.dir/build.make champ/champ_base/CMakeFiles/actionlib_generate_messages_cpp.dir/build
-.PHONY : actionlib_generate_messages_cpp/fast
-
-# Convenience name for target.
-champ/champ_base/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/rule:
-	cd /home/nwhu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 champ/champ_base/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/rule
-.PHONY : champ/champ_base/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-trajectory_msgs_generate_messages_cpp: champ/champ_base/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : trajectory_msgs_generate_messages_cpp
-
-# fast build rule for target.
-trajectory_msgs_generate_messages_cpp/fast:
-	cd /home/nwhu/catkin_ws/build && $(MAKE) -f champ/champ_base/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/build.make champ/champ_base/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/build
-.PHONY : trajectory_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-champ/champ_base/CMakeFiles/quadruped_controller.dir/rule:
-	cd /home/nwhu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 champ/champ_base/CMakeFiles/quadruped_controller.dir/rule
-.PHONY : champ/champ_base/CMakeFiles/quadruped_controller.dir/rule
-
-# Convenience name for target.
-quadruped_controller: champ/champ_base/CMakeFiles/quadruped_controller.dir/rule
-
-.PHONY : quadruped_controller
-
-# fast build rule for target.
-quadruped_controller/fast:
-	cd /home/nwhu/catkin_ws/build && $(MAKE) -f champ/champ_base/CMakeFiles/quadruped_controller.dir/build.make champ/champ_base/CMakeFiles/quadruped_controller.dir/build
-.PHONY : quadruped_controller/fast
+tf2_msgs_generate_messages_lisp/fast:
+	cd /home/nwhu/catkin_ws/build && $(MAKE) -f champ/champ_base/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/build.make champ/champ_base/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/build
+.PHONY : tf2_msgs_generate_messages_lisp/fast
 
 # Convenience name for target.
 champ/champ_base/CMakeFiles/tf2_msgs_generate_messages_eus.dir/rule:
@@ -378,49 +273,19 @@ tf2_msgs_generate_messages_eus/fast:
 .PHONY : tf2_msgs_generate_messages_eus/fast
 
 # Convenience name for target.
-champ/champ_base/CMakeFiles/tf_generate_messages_lisp.dir/rule:
-	cd /home/nwhu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 champ/champ_base/CMakeFiles/tf_generate_messages_lisp.dir/rule
-.PHONY : champ/champ_base/CMakeFiles/tf_generate_messages_lisp.dir/rule
+champ/champ_base/CMakeFiles/nav_msgs_generate_messages_cpp.dir/rule:
+	cd /home/nwhu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 champ/champ_base/CMakeFiles/nav_msgs_generate_messages_cpp.dir/rule
+.PHONY : champ/champ_base/CMakeFiles/nav_msgs_generate_messages_cpp.dir/rule
 
 # Convenience name for target.
-tf_generate_messages_lisp: champ/champ_base/CMakeFiles/tf_generate_messages_lisp.dir/rule
+nav_msgs_generate_messages_cpp: champ/champ_base/CMakeFiles/nav_msgs_generate_messages_cpp.dir/rule
 
-.PHONY : tf_generate_messages_lisp
+.PHONY : nav_msgs_generate_messages_cpp
 
 # fast build rule for target.
-tf_generate_messages_lisp/fast:
-	cd /home/nwhu/catkin_ws/build && $(MAKE) -f champ/champ_base/CMakeFiles/tf_generate_messages_lisp.dir/build.make champ/champ_base/CMakeFiles/tf_generate_messages_lisp.dir/build
-.PHONY : tf_generate_messages_lisp/fast
-
-# Convenience name for target.
-champ/champ_base/CMakeFiles/tf2_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/nwhu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 champ/champ_base/CMakeFiles/tf2_msgs_generate_messages_nodejs.dir/rule
-.PHONY : champ/champ_base/CMakeFiles/tf2_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-tf2_msgs_generate_messages_nodejs: champ/champ_base/CMakeFiles/tf2_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : tf2_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-tf2_msgs_generate_messages_nodejs/fast:
-	cd /home/nwhu/catkin_ws/build && $(MAKE) -f champ/champ_base/CMakeFiles/tf2_msgs_generate_messages_nodejs.dir/build.make champ/champ_base/CMakeFiles/tf2_msgs_generate_messages_nodejs.dir/build
-.PHONY : tf2_msgs_generate_messages_nodejs/fast
-
-# Convenience name for target.
-champ/champ_base/CMakeFiles/tf_generate_messages_nodejs.dir/rule:
-	cd /home/nwhu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 champ/champ_base/CMakeFiles/tf_generate_messages_nodejs.dir/rule
-.PHONY : champ/champ_base/CMakeFiles/tf_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-tf_generate_messages_nodejs: champ/champ_base/CMakeFiles/tf_generate_messages_nodejs.dir/rule
-
-.PHONY : tf_generate_messages_nodejs
-
-# fast build rule for target.
-tf_generate_messages_nodejs/fast:
-	cd /home/nwhu/catkin_ws/build && $(MAKE) -f champ/champ_base/CMakeFiles/tf_generate_messages_nodejs.dir/build.make champ/champ_base/CMakeFiles/tf_generate_messages_nodejs.dir/build
-.PHONY : tf_generate_messages_nodejs/fast
+nav_msgs_generate_messages_cpp/fast:
+	cd /home/nwhu/catkin_ws/build && $(MAKE) -f champ/champ_base/CMakeFiles/nav_msgs_generate_messages_cpp.dir/build.make champ/champ_base/CMakeFiles/nav_msgs_generate_messages_cpp.dir/build
+.PHONY : nav_msgs_generate_messages_cpp/fast
 
 # Convenience name for target.
 champ/champ_base/CMakeFiles/trajectory_msgs_generate_messages_py.dir/rule:
@@ -438,6 +303,36 @@ trajectory_msgs_generate_messages_py/fast:
 .PHONY : trajectory_msgs_generate_messages_py/fast
 
 # Convenience name for target.
+champ/champ_base/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/rule:
+	cd /home/nwhu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 champ/champ_base/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/rule
+.PHONY : champ/champ_base/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+actionlib_msgs_generate_messages_nodejs: champ/champ_base/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/rule
+
+.PHONY : actionlib_msgs_generate_messages_nodejs
+
+# fast build rule for target.
+actionlib_msgs_generate_messages_nodejs/fast:
+	cd /home/nwhu/catkin_ws/build && $(MAKE) -f champ/champ_base/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/build.make champ/champ_base/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/build
+.PHONY : actionlib_msgs_generate_messages_nodejs/fast
+
+# Convenience name for target.
+champ/champ_base/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/rule:
+	cd /home/nwhu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 champ/champ_base/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/rule
+.PHONY : champ/champ_base/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+trajectory_msgs_generate_messages_nodejs: champ/champ_base/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/rule
+
+.PHONY : trajectory_msgs_generate_messages_nodejs
+
+# fast build rule for target.
+trajectory_msgs_generate_messages_nodejs/fast:
+	cd /home/nwhu/catkin_ws/build && $(MAKE) -f champ/champ_base/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/build.make champ/champ_base/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/build
+.PHONY : trajectory_msgs_generate_messages_nodejs/fast
+
+# Convenience name for target.
 champ/champ_base/CMakeFiles/tf_generate_messages_py.dir/rule:
 	cd /home/nwhu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 champ/champ_base/CMakeFiles/tf_generate_messages_py.dir/rule
 .PHONY : champ/champ_base/CMakeFiles/tf_generate_messages_py.dir/rule
@@ -451,6 +346,36 @@ tf_generate_messages_py: champ/champ_base/CMakeFiles/tf_generate_messages_py.dir
 tf_generate_messages_py/fast:
 	cd /home/nwhu/catkin_ws/build && $(MAKE) -f champ/champ_base/CMakeFiles/tf_generate_messages_py.dir/build.make champ/champ_base/CMakeFiles/tf_generate_messages_py.dir/build
 .PHONY : tf_generate_messages_py/fast
+
+# Convenience name for target.
+champ/champ_base/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule:
+	cd /home/nwhu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 champ/champ_base/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
+.PHONY : champ/champ_base/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
+
+# Convenience name for target.
+sensor_msgs_generate_messages_py: champ/champ_base/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
+
+.PHONY : sensor_msgs_generate_messages_py
+
+# fast build rule for target.
+sensor_msgs_generate_messages_py/fast:
+	cd /home/nwhu/catkin_ws/build && $(MAKE) -f champ/champ_base/CMakeFiles/sensor_msgs_generate_messages_py.dir/build.make champ/champ_base/CMakeFiles/sensor_msgs_generate_messages_py.dir/build
+.PHONY : sensor_msgs_generate_messages_py/fast
+
+# Convenience name for target.
+champ/champ_base/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/rule:
+	cd /home/nwhu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 champ/champ_base/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/rule
+.PHONY : champ/champ_base/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+trajectory_msgs_generate_messages_lisp: champ/champ_base/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/rule
+
+.PHONY : trajectory_msgs_generate_messages_lisp
+
+# fast build rule for target.
+trajectory_msgs_generate_messages_lisp/fast:
+	cd /home/nwhu/catkin_ws/build && $(MAKE) -f champ/champ_base/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/build.make champ/champ_base/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/build
+.PHONY : trajectory_msgs_generate_messages_lisp/fast
 
 # Convenience name for target.
 champ/champ_base/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/rule:
@@ -481,6 +406,396 @@ actionlib_generate_messages_eus: champ/champ_base/CMakeFiles/actionlib_generate_
 actionlib_generate_messages_eus/fast:
 	cd /home/nwhu/catkin_ws/build && $(MAKE) -f champ/champ_base/CMakeFiles/actionlib_generate_messages_eus.dir/build.make champ/champ_base/CMakeFiles/actionlib_generate_messages_eus.dir/build
 .PHONY : actionlib_generate_messages_eus/fast
+
+# Convenience name for target.
+champ/champ_base/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/rule:
+	cd /home/nwhu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 champ/champ_base/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/rule
+.PHONY : champ/champ_base/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+trajectory_msgs_generate_messages_cpp: champ/champ_base/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/rule
+
+.PHONY : trajectory_msgs_generate_messages_cpp
+
+# fast build rule for target.
+trajectory_msgs_generate_messages_cpp/fast:
+	cd /home/nwhu/catkin_ws/build && $(MAKE) -f champ/champ_base/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/build.make champ/champ_base/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/build
+.PHONY : trajectory_msgs_generate_messages_cpp/fast
+
+# Convenience name for target.
+champ/champ_base/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/rule:
+	cd /home/nwhu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 champ/champ_base/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/rule
+.PHONY : champ/champ_base/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+visualization_msgs_generate_messages_cpp: champ/champ_base/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/rule
+
+.PHONY : visualization_msgs_generate_messages_cpp
+
+# fast build rule for target.
+visualization_msgs_generate_messages_cpp/fast:
+	cd /home/nwhu/catkin_ws/build && $(MAKE) -f champ/champ_base/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/build.make champ/champ_base/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/build
+.PHONY : visualization_msgs_generate_messages_cpp/fast
+
+# Convenience name for target.
+champ/champ_base/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule:
+	cd /home/nwhu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 champ/champ_base/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
+.PHONY : champ/champ_base/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+sensor_msgs_generate_messages_lisp: champ/champ_base/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
+
+.PHONY : sensor_msgs_generate_messages_lisp
+
+# fast build rule for target.
+sensor_msgs_generate_messages_lisp/fast:
+	cd /home/nwhu/catkin_ws/build && $(MAKE) -f champ/champ_base/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build.make champ/champ_base/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build
+.PHONY : sensor_msgs_generate_messages_lisp/fast
+
+# Convenience name for target.
+champ/champ_base/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule:
+	cd /home/nwhu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 champ/champ_base/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
+.PHONY : champ/champ_base/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+sensor_msgs_generate_messages_eus: champ/champ_base/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
+
+.PHONY : sensor_msgs_generate_messages_eus
+
+# fast build rule for target.
+sensor_msgs_generate_messages_eus/fast:
+	cd /home/nwhu/catkin_ws/build && $(MAKE) -f champ/champ_base/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build.make champ/champ_base/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build
+.PHONY : sensor_msgs_generate_messages_eus/fast
+
+# Convenience name for target.
+champ/champ_base/CMakeFiles/quadruped_controller_node.dir/rule:
+	cd /home/nwhu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 champ/champ_base/CMakeFiles/quadruped_controller_node.dir/rule
+.PHONY : champ/champ_base/CMakeFiles/quadruped_controller_node.dir/rule
+
+# Convenience name for target.
+quadruped_controller_node: champ/champ_base/CMakeFiles/quadruped_controller_node.dir/rule
+
+.PHONY : quadruped_controller_node
+
+# fast build rule for target.
+quadruped_controller_node/fast:
+	cd /home/nwhu/catkin_ws/build && $(MAKE) -f champ/champ_base/CMakeFiles/quadruped_controller_node.dir/build.make champ/champ_base/CMakeFiles/quadruped_controller_node.dir/build
+.PHONY : quadruped_controller_node/fast
+
+# Convenience name for target.
+champ/champ_base/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule:
+	cd /home/nwhu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 champ/champ_base/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
+.PHONY : champ/champ_base/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+sensor_msgs_generate_messages_cpp: champ/champ_base/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
+
+.PHONY : sensor_msgs_generate_messages_cpp
+
+# fast build rule for target.
+sensor_msgs_generate_messages_cpp/fast:
+	cd /home/nwhu/catkin_ws/build && $(MAKE) -f champ/champ_base/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build.make champ/champ_base/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build
+.PHONY : sensor_msgs_generate_messages_cpp/fast
+
+# Convenience name for target.
+champ/champ_base/CMakeFiles/tf_generate_messages_cpp.dir/rule:
+	cd /home/nwhu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 champ/champ_base/CMakeFiles/tf_generate_messages_cpp.dir/rule
+.PHONY : champ/champ_base/CMakeFiles/tf_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+tf_generate_messages_cpp: champ/champ_base/CMakeFiles/tf_generate_messages_cpp.dir/rule
+
+.PHONY : tf_generate_messages_cpp
+
+# fast build rule for target.
+tf_generate_messages_cpp/fast:
+	cd /home/nwhu/catkin_ws/build && $(MAKE) -f champ/champ_base/CMakeFiles/tf_generate_messages_cpp.dir/build.make champ/champ_base/CMakeFiles/tf_generate_messages_cpp.dir/build
+.PHONY : tf_generate_messages_cpp/fast
+
+# Convenience name for target.
+champ/champ_base/CMakeFiles/visualization_msgs_generate_messages_eus.dir/rule:
+	cd /home/nwhu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 champ/champ_base/CMakeFiles/visualization_msgs_generate_messages_eus.dir/rule
+.PHONY : champ/champ_base/CMakeFiles/visualization_msgs_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+visualization_msgs_generate_messages_eus: champ/champ_base/CMakeFiles/visualization_msgs_generate_messages_eus.dir/rule
+
+.PHONY : visualization_msgs_generate_messages_eus
+
+# fast build rule for target.
+visualization_msgs_generate_messages_eus/fast:
+	cd /home/nwhu/catkin_ws/build && $(MAKE) -f champ/champ_base/CMakeFiles/visualization_msgs_generate_messages_eus.dir/build.make champ/champ_base/CMakeFiles/visualization_msgs_generate_messages_eus.dir/build
+.PHONY : visualization_msgs_generate_messages_eus/fast
+
+# Convenience name for target.
+champ/champ_base/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/rule:
+	cd /home/nwhu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 champ/champ_base/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/rule
+.PHONY : champ/champ_base/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+actionlib_msgs_generate_messages_eus: champ/champ_base/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/rule
+
+.PHONY : actionlib_msgs_generate_messages_eus
+
+# fast build rule for target.
+actionlib_msgs_generate_messages_eus/fast:
+	cd /home/nwhu/catkin_ws/build && $(MAKE) -f champ/champ_base/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/build.make champ/champ_base/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/build
+.PHONY : actionlib_msgs_generate_messages_eus/fast
+
+# Convenience name for target.
+champ/champ_base/CMakeFiles/visualization_msgs_generate_messages_py.dir/rule:
+	cd /home/nwhu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 champ/champ_base/CMakeFiles/visualization_msgs_generate_messages_py.dir/rule
+.PHONY : champ/champ_base/CMakeFiles/visualization_msgs_generate_messages_py.dir/rule
+
+# Convenience name for target.
+visualization_msgs_generate_messages_py: champ/champ_base/CMakeFiles/visualization_msgs_generate_messages_py.dir/rule
+
+.PHONY : visualization_msgs_generate_messages_py
+
+# fast build rule for target.
+visualization_msgs_generate_messages_py/fast:
+	cd /home/nwhu/catkin_ws/build && $(MAKE) -f champ/champ_base/CMakeFiles/visualization_msgs_generate_messages_py.dir/build.make champ/champ_base/CMakeFiles/visualization_msgs_generate_messages_py.dir/build
+.PHONY : visualization_msgs_generate_messages_py/fast
+
+# Convenience name for target.
+champ/champ_base/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/rule:
+	cd /home/nwhu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 champ/champ_base/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/rule
+.PHONY : champ/champ_base/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+visualization_msgs_generate_messages_lisp: champ/champ_base/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/rule
+
+.PHONY : visualization_msgs_generate_messages_lisp
+
+# fast build rule for target.
+visualization_msgs_generate_messages_lisp/fast:
+	cd /home/nwhu/catkin_ws/build && $(MAKE) -f champ/champ_base/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/build.make champ/champ_base/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/build
+.PHONY : visualization_msgs_generate_messages_lisp/fast
+
+# Convenience name for target.
+champ/champ_base/CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/rule:
+	cd /home/nwhu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 champ/champ_base/CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/rule
+.PHONY : champ/champ_base/CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+visualization_msgs_generate_messages_nodejs: champ/champ_base/CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/rule
+
+.PHONY : visualization_msgs_generate_messages_nodejs
+
+# fast build rule for target.
+visualization_msgs_generate_messages_nodejs/fast:
+	cd /home/nwhu/catkin_ws/build && $(MAKE) -f champ/champ_base/CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/build.make champ/champ_base/CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/build
+.PHONY : visualization_msgs_generate_messages_nodejs/fast
+
+# Convenience name for target.
+champ/champ_base/CMakeFiles/nav_msgs_generate_messages_eus.dir/rule:
+	cd /home/nwhu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 champ/champ_base/CMakeFiles/nav_msgs_generate_messages_eus.dir/rule
+.PHONY : champ/champ_base/CMakeFiles/nav_msgs_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+nav_msgs_generate_messages_eus: champ/champ_base/CMakeFiles/nav_msgs_generate_messages_eus.dir/rule
+
+.PHONY : nav_msgs_generate_messages_eus
+
+# fast build rule for target.
+nav_msgs_generate_messages_eus/fast:
+	cd /home/nwhu/catkin_ws/build && $(MAKE) -f champ/champ_base/CMakeFiles/nav_msgs_generate_messages_eus.dir/build.make champ/champ_base/CMakeFiles/nav_msgs_generate_messages_eus.dir/build
+.PHONY : nav_msgs_generate_messages_eus/fast
+
+# Convenience name for target.
+champ/champ_base/CMakeFiles/nav_msgs_generate_messages_lisp.dir/rule:
+	cd /home/nwhu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 champ/champ_base/CMakeFiles/nav_msgs_generate_messages_lisp.dir/rule
+.PHONY : champ/champ_base/CMakeFiles/nav_msgs_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+nav_msgs_generate_messages_lisp: champ/champ_base/CMakeFiles/nav_msgs_generate_messages_lisp.dir/rule
+
+.PHONY : nav_msgs_generate_messages_lisp
+
+# fast build rule for target.
+nav_msgs_generate_messages_lisp/fast:
+	cd /home/nwhu/catkin_ws/build && $(MAKE) -f champ/champ_base/CMakeFiles/nav_msgs_generate_messages_lisp.dir/build.make champ/champ_base/CMakeFiles/nav_msgs_generate_messages_lisp.dir/build
+.PHONY : nav_msgs_generate_messages_lisp/fast
+
+# Convenience name for target.
+champ/champ_base/CMakeFiles/quadruped_controller.dir/rule:
+	cd /home/nwhu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 champ/champ_base/CMakeFiles/quadruped_controller.dir/rule
+.PHONY : champ/champ_base/CMakeFiles/quadruped_controller.dir/rule
+
+# Convenience name for target.
+quadruped_controller: champ/champ_base/CMakeFiles/quadruped_controller.dir/rule
+
+.PHONY : quadruped_controller
+
+# fast build rule for target.
+quadruped_controller/fast:
+	cd /home/nwhu/catkin_ws/build && $(MAKE) -f champ/champ_base/CMakeFiles/quadruped_controller.dir/build.make champ/champ_base/CMakeFiles/quadruped_controller.dir/build
+.PHONY : quadruped_controller/fast
+
+# Convenience name for target.
+champ/champ_base/CMakeFiles/tf_generate_messages_lisp.dir/rule:
+	cd /home/nwhu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 champ/champ_base/CMakeFiles/tf_generate_messages_lisp.dir/rule
+.PHONY : champ/champ_base/CMakeFiles/tf_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+tf_generate_messages_lisp: champ/champ_base/CMakeFiles/tf_generate_messages_lisp.dir/rule
+
+.PHONY : tf_generate_messages_lisp
+
+# fast build rule for target.
+tf_generate_messages_lisp/fast:
+	cd /home/nwhu/catkin_ws/build && $(MAKE) -f champ/champ_base/CMakeFiles/tf_generate_messages_lisp.dir/build.make champ/champ_base/CMakeFiles/tf_generate_messages_lisp.dir/build
+.PHONY : tf_generate_messages_lisp/fast
+
+# Convenience name for target.
+champ/champ_base/CMakeFiles/nav_msgs_generate_messages_nodejs.dir/rule:
+	cd /home/nwhu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 champ/champ_base/CMakeFiles/nav_msgs_generate_messages_nodejs.dir/rule
+.PHONY : champ/champ_base/CMakeFiles/nav_msgs_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+nav_msgs_generate_messages_nodejs: champ/champ_base/CMakeFiles/nav_msgs_generate_messages_nodejs.dir/rule
+
+.PHONY : nav_msgs_generate_messages_nodejs
+
+# fast build rule for target.
+nav_msgs_generate_messages_nodejs/fast:
+	cd /home/nwhu/catkin_ws/build && $(MAKE) -f champ/champ_base/CMakeFiles/nav_msgs_generate_messages_nodejs.dir/build.make champ/champ_base/CMakeFiles/nav_msgs_generate_messages_nodejs.dir/build
+.PHONY : nav_msgs_generate_messages_nodejs/fast
+
+# Convenience name for target.
+champ/champ_base/CMakeFiles/nav_msgs_generate_messages_py.dir/rule:
+	cd /home/nwhu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 champ/champ_base/CMakeFiles/nav_msgs_generate_messages_py.dir/rule
+.PHONY : champ/champ_base/CMakeFiles/nav_msgs_generate_messages_py.dir/rule
+
+# Convenience name for target.
+nav_msgs_generate_messages_py: champ/champ_base/CMakeFiles/nav_msgs_generate_messages_py.dir/rule
+
+.PHONY : nav_msgs_generate_messages_py
+
+# fast build rule for target.
+nav_msgs_generate_messages_py/fast:
+	cd /home/nwhu/catkin_ws/build && $(MAKE) -f champ/champ_base/CMakeFiles/nav_msgs_generate_messages_py.dir/build.make champ/champ_base/CMakeFiles/nav_msgs_generate_messages_py.dir/build
+.PHONY : nav_msgs_generate_messages_py/fast
+
+# Convenience name for target.
+champ/champ_base/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/rule:
+	cd /home/nwhu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 champ/champ_base/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/rule
+.PHONY : champ/champ_base/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+actionlib_msgs_generate_messages_cpp: champ/champ_base/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/rule
+
+.PHONY : actionlib_msgs_generate_messages_cpp
+
+# fast build rule for target.
+actionlib_msgs_generate_messages_cpp/fast:
+	cd /home/nwhu/catkin_ws/build && $(MAKE) -f champ/champ_base/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/build.make champ/champ_base/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/build
+.PHONY : actionlib_msgs_generate_messages_cpp/fast
+
+# Convenience name for target.
+champ/champ_base/CMakeFiles/tf_generate_messages_eus.dir/rule:
+	cd /home/nwhu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 champ/champ_base/CMakeFiles/tf_generate_messages_eus.dir/rule
+.PHONY : champ/champ_base/CMakeFiles/tf_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+tf_generate_messages_eus: champ/champ_base/CMakeFiles/tf_generate_messages_eus.dir/rule
+
+.PHONY : tf_generate_messages_eus
+
+# fast build rule for target.
+tf_generate_messages_eus/fast:
+	cd /home/nwhu/catkin_ws/build && $(MAKE) -f champ/champ_base/CMakeFiles/tf_generate_messages_eus.dir/build.make champ/champ_base/CMakeFiles/tf_generate_messages_eus.dir/build
+.PHONY : tf_generate_messages_eus/fast
+
+# Convenience name for target.
+champ/champ_base/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/rule:
+	cd /home/nwhu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 champ/champ_base/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/rule
+.PHONY : champ/champ_base/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+actionlib_msgs_generate_messages_lisp: champ/champ_base/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/rule
+
+.PHONY : actionlib_msgs_generate_messages_lisp
+
+# fast build rule for target.
+actionlib_msgs_generate_messages_lisp/fast:
+	cd /home/nwhu/catkin_ws/build && $(MAKE) -f champ/champ_base/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/build.make champ/champ_base/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/build
+.PHONY : actionlib_msgs_generate_messages_lisp/fast
+
+# Convenience name for target.
+champ/champ_base/CMakeFiles/actionlib_msgs_generate_messages_py.dir/rule:
+	cd /home/nwhu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 champ/champ_base/CMakeFiles/actionlib_msgs_generate_messages_py.dir/rule
+.PHONY : champ/champ_base/CMakeFiles/actionlib_msgs_generate_messages_py.dir/rule
+
+# Convenience name for target.
+actionlib_msgs_generate_messages_py: champ/champ_base/CMakeFiles/actionlib_msgs_generate_messages_py.dir/rule
+
+.PHONY : actionlib_msgs_generate_messages_py
+
+# fast build rule for target.
+actionlib_msgs_generate_messages_py/fast:
+	cd /home/nwhu/catkin_ws/build && $(MAKE) -f champ/champ_base/CMakeFiles/actionlib_msgs_generate_messages_py.dir/build.make champ/champ_base/CMakeFiles/actionlib_msgs_generate_messages_py.dir/build
+.PHONY : actionlib_msgs_generate_messages_py/fast
+
+# Convenience name for target.
+champ/champ_base/CMakeFiles/message_relay_node.dir/rule:
+	cd /home/nwhu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 champ/champ_base/CMakeFiles/message_relay_node.dir/rule
+.PHONY : champ/champ_base/CMakeFiles/message_relay_node.dir/rule
+
+# Convenience name for target.
+message_relay_node: champ/champ_base/CMakeFiles/message_relay_node.dir/rule
+
+.PHONY : message_relay_node
+
+# fast build rule for target.
+message_relay_node/fast:
+	cd /home/nwhu/catkin_ws/build && $(MAKE) -f champ/champ_base/CMakeFiles/message_relay_node.dir/build.make champ/champ_base/CMakeFiles/message_relay_node.dir/build
+.PHONY : message_relay_node/fast
+
+# Convenience name for target.
+champ/champ_base/CMakeFiles/tf_generate_messages_nodejs.dir/rule:
+	cd /home/nwhu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 champ/champ_base/CMakeFiles/tf_generate_messages_nodejs.dir/rule
+.PHONY : champ/champ_base/CMakeFiles/tf_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+tf_generate_messages_nodejs: champ/champ_base/CMakeFiles/tf_generate_messages_nodejs.dir/rule
+
+.PHONY : tf_generate_messages_nodejs
+
+# fast build rule for target.
+tf_generate_messages_nodejs/fast:
+	cd /home/nwhu/catkin_ws/build && $(MAKE) -f champ/champ_base/CMakeFiles/tf_generate_messages_nodejs.dir/build.make champ/champ_base/CMakeFiles/tf_generate_messages_nodejs.dir/build
+.PHONY : tf_generate_messages_nodejs/fast
+
+# Convenience name for target.
+champ/champ_base/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule:
+	cd /home/nwhu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 champ/champ_base/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule
+.PHONY : champ/champ_base/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+sensor_msgs_generate_messages_nodejs: champ/champ_base/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule
+
+.PHONY : sensor_msgs_generate_messages_nodejs
+
+# fast build rule for target.
+sensor_msgs_generate_messages_nodejs/fast:
+	cd /home/nwhu/catkin_ws/build && $(MAKE) -f champ/champ_base/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build.make champ/champ_base/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build
+.PHONY : sensor_msgs_generate_messages_nodejs/fast
+
+# Convenience name for target.
+champ/champ_base/CMakeFiles/actionlib_generate_messages_cpp.dir/rule:
+	cd /home/nwhu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 champ/champ_base/CMakeFiles/actionlib_generate_messages_cpp.dir/rule
+.PHONY : champ/champ_base/CMakeFiles/actionlib_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+actionlib_generate_messages_cpp: champ/champ_base/CMakeFiles/actionlib_generate_messages_cpp.dir/rule
+
+.PHONY : actionlib_generate_messages_cpp
+
+# fast build rule for target.
+actionlib_generate_messages_cpp/fast:
+	cd /home/nwhu/catkin_ws/build && $(MAKE) -f champ/champ_base/CMakeFiles/actionlib_generate_messages_cpp.dir/build.make champ/champ_base/CMakeFiles/actionlib_generate_messages_cpp.dir/build
+.PHONY : actionlib_generate_messages_cpp/fast
 
 # Convenience name for target.
 champ/champ_base/CMakeFiles/actionlib_generate_messages_lisp.dir/rule:
@@ -526,21 +841,6 @@ actionlib_generate_messages_py: champ/champ_base/CMakeFiles/actionlib_generate_m
 actionlib_generate_messages_py/fast:
 	cd /home/nwhu/catkin_ws/build && $(MAKE) -f champ/champ_base/CMakeFiles/actionlib_generate_messages_py.dir/build.make champ/champ_base/CMakeFiles/actionlib_generate_messages_py.dir/build
 .PHONY : actionlib_generate_messages_py/fast
-
-# Convenience name for target.
-champ/champ_base/CMakeFiles/quadruped_controller_node.dir/rule:
-	cd /home/nwhu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 champ/champ_base/CMakeFiles/quadruped_controller_node.dir/rule
-.PHONY : champ/champ_base/CMakeFiles/quadruped_controller_node.dir/rule
-
-# Convenience name for target.
-quadruped_controller_node: champ/champ_base/CMakeFiles/quadruped_controller_node.dir/rule
-
-.PHONY : quadruped_controller_node
-
-# fast build rule for target.
-quadruped_controller_node/fast:
-	cd /home/nwhu/catkin_ws/build && $(MAKE) -f champ/champ_base/CMakeFiles/quadruped_controller_node.dir/build.make champ/champ_base/CMakeFiles/quadruped_controller_node.dir/build
-.PHONY : quadruped_controller_node/fast
 
 # Convenience name for target.
 champ/champ_base/CMakeFiles/tf2_msgs_generate_messages_cpp.dir/rule:
@@ -726,37 +1026,57 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... list_install_components"
-	@echo "... rebuild_cache"
-	@echo "... test"
 	@echo "... state_estimation_node"
-	@echo "... message_relay_node"
 	@echo "... state_estimation"
-	@echo "... tf2_msgs_generate_messages_lisp"
-	@echo "... tf_generate_messages_cpp"
-	@echo "... trajectory_msgs_generate_messages_lisp"
-	@echo "... install"
-	@echo "... tf_generate_messages_eus"
 	@echo "... message_relay"
-	@echo "... tf2_msgs_generate_messages_py"
-	@echo "... trajectory_msgs_generate_messages_nodejs"
-	@echo "... actionlib_generate_messages_cpp"
-	@echo "... trajectory_msgs_generate_messages_cpp"
-	@echo "... edit_cache"
-	@echo "... quadruped_controller"
-	@echo "... tf2_msgs_generate_messages_eus"
-	@echo "... tf_generate_messages_lisp"
-	@echo "... install/local"
 	@echo "... tf2_msgs_generate_messages_nodejs"
-	@echo "... tf_generate_messages_nodejs"
+	@echo "... install/strip"
+	@echo "... tf2_msgs_generate_messages_py"
+	@echo "... tf2_msgs_generate_messages_lisp"
+	@echo "... tf2_msgs_generate_messages_eus"
+	@echo "... nav_msgs_generate_messages_cpp"
 	@echo "... trajectory_msgs_generate_messages_py"
+	@echo "... actionlib_msgs_generate_messages_nodejs"
+	@echo "... trajectory_msgs_generate_messages_nodejs"
 	@echo "... tf_generate_messages_py"
+	@echo "... sensor_msgs_generate_messages_py"
+	@echo "... trajectory_msgs_generate_messages_lisp"
 	@echo "... trajectory_msgs_generate_messages_eus"
 	@echo "... actionlib_generate_messages_eus"
+	@echo "... trajectory_msgs_generate_messages_cpp"
+	@echo "... visualization_msgs_generate_messages_cpp"
+	@echo "... install/local"
+	@echo "... sensor_msgs_generate_messages_lisp"
+	@echo "... sensor_msgs_generate_messages_eus"
+	@echo "... quadruped_controller_node"
+	@echo "... sensor_msgs_generate_messages_cpp"
+	@echo "... tf_generate_messages_cpp"
+	@echo "... visualization_msgs_generate_messages_eus"
+	@echo "... actionlib_msgs_generate_messages_eus"
+	@echo "... visualization_msgs_generate_messages_py"
+	@echo "... visualization_msgs_generate_messages_lisp"
+	@echo "... visualization_msgs_generate_messages_nodejs"
+	@echo "... nav_msgs_generate_messages_eus"
+	@echo "... edit_cache"
+	@echo "... nav_msgs_generate_messages_lisp"
+	@echo "... quadruped_controller"
+	@echo "... tf_generate_messages_lisp"
+	@echo "... nav_msgs_generate_messages_nodejs"
+	@echo "... install"
+	@echo "... nav_msgs_generate_messages_py"
+	@echo "... actionlib_msgs_generate_messages_cpp"
+	@echo "... tf_generate_messages_eus"
+	@echo "... actionlib_msgs_generate_messages_lisp"
+	@echo "... actionlib_msgs_generate_messages_py"
+	@echo "... message_relay_node"
+	@echo "... tf_generate_messages_nodejs"
+	@echo "... rebuild_cache"
+	@echo "... sensor_msgs_generate_messages_nodejs"
+	@echo "... actionlib_generate_messages_cpp"
 	@echo "... actionlib_generate_messages_lisp"
+	@echo "... test"
 	@echo "... actionlib_generate_messages_nodejs"
 	@echo "... actionlib_generate_messages_py"
-	@echo "... install/strip"
-	@echo "... quadruped_controller_node"
 	@echo "... tf2_msgs_generate_messages_cpp"
 	@echo "... src/message_relay.o"
 	@echo "... src/message_relay.i"
