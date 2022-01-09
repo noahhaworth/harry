@@ -1,7 +1,7 @@
 # victor
-required packages:
-ros-melodic-desktop-full #need to trim this puppy down...
-ros-melodic-teleop-twist-keyboard
+required packages:\n
+ros-melodic-desktop-full #need to trim this puppy down...\n
+ros-melodic-teleop-twist-keyboard\n
 ros-melodic-robot-localization
 ros-melodic-hector-sensors-description
 ros-melodic-hector-slam
