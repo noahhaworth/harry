@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+set -e
+rosrun xacro xacro victor.urdf.xacro > quadruped.urdf
