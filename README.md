@@ -13,7 +13,8 @@ ros-melodic-joint-trajectory-controller\
 ros-melodic-rplidar-ros\
 ros-melodic-gmapping\
 ros-melodic-move-base\
-ros-melodic-global-planner
+ros-melodic-global-planner\
+ros-melodic-dwa-local-planner
 
 # to do
 change <arg name="laser" default="sim"/> to <arg name="laser" default="rplidar"/>, currently facing VM /dev/ttyUSB0 issue\
