@@ -1,8 +1,0 @@
-prefix=/home/nwhu/catkin_ws/devel
-
-Name: yobotics_gazebo
-Description: Description of yobotics_gazebo
-Version: 0.1.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 

@@ -1,8 +1,0 @@
-prefix=/home/nwhu/catkin_ws/devel
-
-Name: victor_gazebo
-Description: Description of victor_gazebo
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 

@@ -17,7 +17,6 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "/home/nwhu/catkin_ws/src/include"
   "/home/nwhu/catkin_ws/src/champ/champ_base/include"
   "/home/nwhu/catkin_ws/src/champ/champ/include"
   "/home/nwhu/catkin_ws/src/champ/champ/include/champ"

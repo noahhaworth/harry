@@ -1,8 +1,0 @@
-prefix=/home/nwhu/catkin_ws/devel
-
-Name: stochlite_description
-Description: Description of stochlite_description
-Version: 1.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 

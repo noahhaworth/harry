@@ -3,6 +3,17 @@
 
 champ/champ_base/CMakeFiles/state_estimation.dir/src/state_estimation.cpp.o
  /home/nwhu/catkin_ws/devel/include/champ_msgs/ContactsStamped.h
+ /home/nwhu/catkin_ws/src/champ/champ/include/champ/bla/basic_linear_algebra.h
+ /home/nwhu/catkin_ws/src/champ/champ/include/champ/bla/memory_delegate.h
+ /home/nwhu/catkin_ws/src/champ/champ/include/champ/geometry/geometry.h
+ /home/nwhu/catkin_ws/src/champ/champ/include/champ/macros/macros.h
+ /home/nwhu/catkin_ws/src/champ/champ/include/champ/odometry/odometry.h
+ /home/nwhu/catkin_ws/src/champ/champ/include/champ/quadruped_base/quadruped_base.h
+ /home/nwhu/catkin_ws/src/champ/champ/include/champ/quadruped_base/quadruped_components.h
+ /home/nwhu/catkin_ws/src/champ/champ/include/champ/quadruped_base/quadruped_joint.h
+ /home/nwhu/catkin_ws/src/champ/champ/include/champ/quadruped_base/quadruped_leg.h
+ /home/nwhu/catkin_ws/src/champ/champ/include/champ/utils/urdf_loader.h
+ /home/nwhu/catkin_ws/src/champ/champ/include/champ/utils/xmlrpc_helpers.h
  /home/nwhu/catkin_ws/src/champ/champ_base/include/state_estimation.h
  /home/nwhu/catkin_ws/src/champ/champ_base/src/state_estimation.cpp
  /opt/ros/melodic/include/geometry_msgs/Point.h
@@ -92,6 +103,9 @@ champ/champ_base/CMakeFiles/state_estimation.dir/src/state_estimation.cpp.o
  /opt/ros/melodic/include/tf2/LinearMath/Scalar.h
  /opt/ros/melodic/include/tf2/LinearMath/Vector3.h
  /opt/ros/melodic/include/tf2_ros/transform_broadcaster.h
+ /opt/ros/melodic/include/urdf/model.h
+ /opt/ros/melodic/include/urdf/urdfdom_compatibility.h
+ /opt/ros/melodic/include/urdf/visibility_control.hpp
  /opt/ros/melodic/include/visualization_msgs/Marker.h
  /opt/ros/melodic/include/visualization_msgs/MarkerArray.h
  /opt/ros/melodic/include/xmlrpcpp/XmlRpcDecl.h

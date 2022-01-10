@@ -6,6 +6,21 @@ champ/champ_base/CMakeFiles/quadruped_controller.dir/src/quadruped_controller.cp
 champ/champ_base/CMakeFiles/quadruped_controller.dir/src/quadruped_controller.cpp.o: /home/nwhu/catkin_ws/devel/include/champ_msgs/Point.h
 champ/champ_base/CMakeFiles/quadruped_controller.dir/src/quadruped_controller.cpp.o: /home/nwhu/catkin_ws/devel/include/champ_msgs/PointArray.h
 champ/champ_base/CMakeFiles/quadruped_controller.dir/src/quadruped_controller.cpp.o: /home/nwhu/catkin_ws/devel/include/champ_msgs/Pose.h
+champ/champ_base/CMakeFiles/quadruped_controller.dir/src/quadruped_controller.cpp.o: /home/nwhu/catkin_ws/src/champ/champ/include/champ/bla/basic_linear_algebra.h
+champ/champ_base/CMakeFiles/quadruped_controller.dir/src/quadruped_controller.cpp.o: /home/nwhu/catkin_ws/src/champ/champ/include/champ/bla/memory_delegate.h
+champ/champ_base/CMakeFiles/quadruped_controller.dir/src/quadruped_controller.cpp.o: /home/nwhu/catkin_ws/src/champ/champ/include/champ/body_controller/body_controller.h
+champ/champ_base/CMakeFiles/quadruped_controller.dir/src/quadruped_controller.cpp.o: /home/nwhu/catkin_ws/src/champ/champ/include/champ/geometry/geometry.h
+champ/champ_base/CMakeFiles/quadruped_controller.dir/src/quadruped_controller.cpp.o: /home/nwhu/catkin_ws/src/champ/champ/include/champ/kinematics/kinematics.h
+champ/champ_base/CMakeFiles/quadruped_controller.dir/src/quadruped_controller.cpp.o: /home/nwhu/catkin_ws/src/champ/champ/include/champ/leg_controller/leg_controller.h
+champ/champ_base/CMakeFiles/quadruped_controller.dir/src/quadruped_controller.cpp.o: /home/nwhu/catkin_ws/src/champ/champ/include/champ/leg_controller/phase_generator.h
+champ/champ_base/CMakeFiles/quadruped_controller.dir/src/quadruped_controller.cpp.o: /home/nwhu/catkin_ws/src/champ/champ/include/champ/leg_controller/trajectory_planner.h
+champ/champ_base/CMakeFiles/quadruped_controller.dir/src/quadruped_controller.cpp.o: /home/nwhu/catkin_ws/src/champ/champ/include/champ/macros/macros.h
+champ/champ_base/CMakeFiles/quadruped_controller.dir/src/quadruped_controller.cpp.o: /home/nwhu/catkin_ws/src/champ/champ/include/champ/quadruped_base/quadruped_base.h
+champ/champ_base/CMakeFiles/quadruped_controller.dir/src/quadruped_controller.cpp.o: /home/nwhu/catkin_ws/src/champ/champ/include/champ/quadruped_base/quadruped_components.h
+champ/champ_base/CMakeFiles/quadruped_controller.dir/src/quadruped_controller.cpp.o: /home/nwhu/catkin_ws/src/champ/champ/include/champ/quadruped_base/quadruped_joint.h
+champ/champ_base/CMakeFiles/quadruped_controller.dir/src/quadruped_controller.cpp.o: /home/nwhu/catkin_ws/src/champ/champ/include/champ/quadruped_base/quadruped_leg.h
+champ/champ_base/CMakeFiles/quadruped_controller.dir/src/quadruped_controller.cpp.o: /home/nwhu/catkin_ws/src/champ/champ/include/champ/utils/urdf_loader.h
+champ/champ_base/CMakeFiles/quadruped_controller.dir/src/quadruped_controller.cpp.o: /home/nwhu/catkin_ws/src/champ/champ/include/champ/utils/xmlrpc_helpers.h
 champ/champ_base/CMakeFiles/quadruped_controller.dir/src/quadruped_controller.cpp.o: /home/nwhu/catkin_ws/src/champ/champ_base/include/quadruped_controller.h
 champ/champ_base/CMakeFiles/quadruped_controller.dir/src/quadruped_controller.cpp.o: /home/nwhu/catkin_ws/src/champ/champ_base/src/quadruped_controller.cpp
 champ/champ_base/CMakeFiles/quadruped_controller.dir/src/quadruped_controller.cpp.o: /opt/ros/melodic/include/geometry_msgs/Point.h
@@ -87,6 +102,9 @@ champ/champ_base/CMakeFiles/quadruped_controller.dir/src/quadruped_controller.cp
 champ/champ_base/CMakeFiles/quadruped_controller.dir/src/quadruped_controller.cpp.o: /opt/ros/melodic/include/tf/transform_datatypes.h
 champ/champ_base/CMakeFiles/quadruped_controller.dir/src/quadruped_controller.cpp.o: /opt/ros/melodic/include/trajectory_msgs/JointTrajectory.h
 champ/champ_base/CMakeFiles/quadruped_controller.dir/src/quadruped_controller.cpp.o: /opt/ros/melodic/include/trajectory_msgs/JointTrajectoryPoint.h
+champ/champ_base/CMakeFiles/quadruped_controller.dir/src/quadruped_controller.cpp.o: /opt/ros/melodic/include/urdf/model.h
+champ/champ_base/CMakeFiles/quadruped_controller.dir/src/quadruped_controller.cpp.o: /opt/ros/melodic/include/urdf/urdfdom_compatibility.h
+champ/champ_base/CMakeFiles/quadruped_controller.dir/src/quadruped_controller.cpp.o: /opt/ros/melodic/include/urdf/visibility_control.hpp
 champ/champ_base/CMakeFiles/quadruped_controller.dir/src/quadruped_controller.cpp.o: /opt/ros/melodic/include/xmlrpcpp/XmlRpcDecl.h
 champ/champ_base/CMakeFiles/quadruped_controller.dir/src/quadruped_controller.cpp.o: /opt/ros/melodic/include/xmlrpcpp/XmlRpcValue.h
 

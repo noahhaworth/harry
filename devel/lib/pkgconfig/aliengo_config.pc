@@ -1,8 +1,0 @@
-prefix=/home/nwhu/catkin_ws/devel
-
-Name: aliengo_config
-Description: Description of aliengo_config
-Version: 0.1.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 

@@ -1,8 +1,0 @@
-prefix=/home/nwhu/catkin_ws/devel
-
-Name: open_quadruped_config
-Description: Description of open_quadruped_config
-Version: 0.1.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 

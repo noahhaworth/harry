@@ -5,6 +5,15 @@ champ/champ_base/CMakeFiles/message_relay.dir/src/message_relay.cpp.o: /home/nwh
 champ/champ_base/CMakeFiles/message_relay.dir/src/message_relay.cpp.o: /home/nwhu/catkin_ws/devel/include/champ_msgs/ContactsStamped.h
 champ/champ_base/CMakeFiles/message_relay.dir/src/message_relay.cpp.o: /home/nwhu/catkin_ws/devel/include/champ_msgs/Imu.h
 champ/champ_base/CMakeFiles/message_relay.dir/src/message_relay.cpp.o: /home/nwhu/catkin_ws/devel/include/champ_msgs/Joints.h
+champ/champ_base/CMakeFiles/message_relay.dir/src/message_relay.cpp.o: /home/nwhu/catkin_ws/src/champ/champ/include/champ/bla/basic_linear_algebra.h
+champ/champ_base/CMakeFiles/message_relay.dir/src/message_relay.cpp.o: /home/nwhu/catkin_ws/src/champ/champ/include/champ/bla/memory_delegate.h
+champ/champ_base/CMakeFiles/message_relay.dir/src/message_relay.cpp.o: /home/nwhu/catkin_ws/src/champ/champ/include/champ/geometry/geometry.h
+champ/champ_base/CMakeFiles/message_relay.dir/src/message_relay.cpp.o: /home/nwhu/catkin_ws/src/champ/champ/include/champ/quadruped_base/quadruped_base.h
+champ/champ_base/CMakeFiles/message_relay.dir/src/message_relay.cpp.o: /home/nwhu/catkin_ws/src/champ/champ/include/champ/quadruped_base/quadruped_components.h
+champ/champ_base/CMakeFiles/message_relay.dir/src/message_relay.cpp.o: /home/nwhu/catkin_ws/src/champ/champ/include/champ/quadruped_base/quadruped_joint.h
+champ/champ_base/CMakeFiles/message_relay.dir/src/message_relay.cpp.o: /home/nwhu/catkin_ws/src/champ/champ/include/champ/quadruped_base/quadruped_leg.h
+champ/champ_base/CMakeFiles/message_relay.dir/src/message_relay.cpp.o: /home/nwhu/catkin_ws/src/champ/champ/include/champ/utils/urdf_loader.h
+champ/champ_base/CMakeFiles/message_relay.dir/src/message_relay.cpp.o: /home/nwhu/catkin_ws/src/champ/champ/include/champ/utils/xmlrpc_helpers.h
 champ/champ_base/CMakeFiles/message_relay.dir/src/message_relay.cpp.o: /home/nwhu/catkin_ws/src/champ/champ_base/include/message_relay.h
 champ/champ_base/CMakeFiles/message_relay.dir/src/message_relay.cpp.o: /home/nwhu/catkin_ws/src/champ/champ_base/src/message_relay.cpp
 champ/champ_base/CMakeFiles/message_relay.dir/src/message_relay.cpp.o: /opt/ros/melodic/include/geometry_msgs/Point.h
@@ -86,6 +95,9 @@ champ/champ_base/CMakeFiles/message_relay.dir/src/message_relay.cpp.o: /opt/ros/
 champ/champ_base/CMakeFiles/message_relay.dir/src/message_relay.cpp.o: /opt/ros/melodic/include/tf2_ros/transform_broadcaster.h
 champ/champ_base/CMakeFiles/message_relay.dir/src/message_relay.cpp.o: /opt/ros/melodic/include/trajectory_msgs/JointTrajectory.h
 champ/champ_base/CMakeFiles/message_relay.dir/src/message_relay.cpp.o: /opt/ros/melodic/include/trajectory_msgs/JointTrajectoryPoint.h
+champ/champ_base/CMakeFiles/message_relay.dir/src/message_relay.cpp.o: /opt/ros/melodic/include/urdf/model.h
+champ/champ_base/CMakeFiles/message_relay.dir/src/message_relay.cpp.o: /opt/ros/melodic/include/urdf/urdfdom_compatibility.h
+champ/champ_base/CMakeFiles/message_relay.dir/src/message_relay.cpp.o: /opt/ros/melodic/include/urdf/visibility_control.hpp
 champ/champ_base/CMakeFiles/message_relay.dir/src/message_relay.cpp.o: /opt/ros/melodic/include/xmlrpcpp/XmlRpcDecl.h
 champ/champ_base/CMakeFiles/message_relay.dir/src/message_relay.cpp.o: /opt/ros/melodic/include/xmlrpcpp/XmlRpcValue.h
 

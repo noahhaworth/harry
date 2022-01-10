@@ -1,8 +1,0 @@
-prefix=/home/nwhu/catkin_ws/devel
-
-Name: littledog_description
-Description: Description of littledog_description
-Version: 0.0.1
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 

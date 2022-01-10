@@ -6,5 +6,5 @@ CXX_FLAGS = -fPIC   -std=c++11
 
 CXX_DEFINES = -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\"champ_base\" -Dquadruped_controller_EXPORTS
 
-CXX_INCLUDES = -I/home/nwhu/catkin_ws/src/include -I/home/nwhu/catkin_ws/src/champ/champ_base/include -I/home/nwhu/catkin_ws/src/champ/champ/include -I/home/nwhu/catkin_ws/src/champ/champ/include/champ -I/home/nwhu/catkin_ws/src/champ/champ/include/champ/champ -I/home/nwhu/catkin_ws/src/champ/champ/include/champ/champ/champ -I/home/nwhu/catkin_ws/devel/include -I/opt/ros/melodic/include -I/opt/ros/melodic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp 
+CXX_INCLUDES = -I/home/nwhu/catkin_ws/src/champ/champ_base/include -I/home/nwhu/catkin_ws/src/champ/champ/include -I/home/nwhu/catkin_ws/src/champ/champ/include/champ -I/home/nwhu/catkin_ws/src/champ/champ/include/champ/champ -I/home/nwhu/catkin_ws/src/champ/champ/include/champ/champ/champ -I/home/nwhu/catkin_ws/devel/include -I/opt/ros/melodic/include -I/opt/ros/melodic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp 
 

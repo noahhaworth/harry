@@ -19,16 +19,18 @@
           - rh_upper_leg_joint
           - rh_lower_leg_joint
 
+#i used to be 20, {p: 0, d: 0, i: 0}
+
       gains:
-        lf_hip_joint : {p: 180, d: 0.9, i: 20}
-        lf_upper_leg_joint : {p: 180, d: 0.9, i: 20}
-        lf_lower_leg_joint : {p: 180, d: 0.9, i: 20}
-        rf_hip_joint : {p: 180, d: 0.9, i: 20}
-        rf_upper_leg_joint : {p: 180, d: 0.9, i: 20}
-        rf_lower_leg_joint : {p: 180, d: 0.9, i: 20}
-        lh_hip_joint : {p: 180, d: 0.9, i: 20}
-        lh_upper_leg_joint : {p: 180, d: 0.9, i: 20}
-        lh_lower_leg_joint : {p: 180, d: 0.9, i: 20}
-        rh_hip_joint : {p: 180, d: 0.9, i: 20}
-        rh_upper_leg_joint : {p: 180, d: 0.9, i: 20}
-        rh_lower_leg_joint : {p: 180, d: 0.9, i: 20}
+        lf_hip_joint : {p: 180, d: 0, i: 20}
+        lf_upper_leg_joint : {p: 180, d: 0, i: 20}
+        lf_lower_leg_joint : {p: 180, d: 0, i: 20}
+        rf_hip_joint : {p: 180, d: 0, i: 20}
+        rf_upper_leg_joint : {p: 180, d: 0, i: 20}
+        rf_lower_leg_joint : {p: 180, d: 0, i: 20}
+        lh_hip_joint : {p: 180, d: 0, i: 20}
+        lh_upper_leg_joint : {p: 180, d: 0, i: 20}
+        lh_lower_leg_joint : {p: 180, d: 0, i: 20}
+        rh_hip_joint : {p: 180, d: 0, i: 20}
+        rh_upper_leg_joint : {p: 180, d: 0, i: 20}
+        rh_lower_leg_joint : {p: 180, d: 0, i: 20}
