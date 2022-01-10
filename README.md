@@ -10,7 +10,9 @@ ros-melodic-hector-slam\
 ros-melodic-ecl-threads\
 ros-melodic-ros-control\
 ros-melodic-joint-trajectory-controller\
-ros-melodic-rplidar-ros
+ros-melodic-rplidar-ros\
+ros-melodic-gmapping\
+ros-melodic-move-base
 
 # to do
 change <arg name="laser" default="sim"/> to <arg name="laser" default="rplidar"/>, currently facing VM /dev/ttyUSB0 issue\
