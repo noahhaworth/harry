@@ -96,7 +96,7 @@
     </sensor>
   </gazebo>
   <joint name="camera_joint" type="fixed">
-    <origin rpy="0 0 0" xyz="0.0875 0.0 -0.015"/>
+    <origin rpy="0 0 0" xyz="0.175 0.0 0.015"/>
     <parent link="base_link"/>
     <child link="camera_link"/>
   </joint>
