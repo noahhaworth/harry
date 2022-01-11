@@ -14,7 +14,9 @@ ros-melodic-rplidar-ros\
 ros-melodic-gmapping\
 ros-melodic-move-base\
 ros-melodic-global-planner\
-ros-melodic-dwa-local-planner
+ros-melodic-dwa-local-planner\
+ros-melodic-amcl\
+ros-melodic-map-server
 
 # to do
 change <arg name="laser" default="sim"/> to <arg name="laser" default="rplidar"/>, currently facing VM /dev/ttyUSB0 issue\
