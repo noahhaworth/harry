@@ -3,7 +3,7 @@
 	<xacro:macro name="accessories" params="base_name base_length base_height  " >
 
 		<xacro:include filename="$(find hector_sensors_description)/urdf/hokuyo_utm30lx.urdf.xacro" />
-		<xacro:include filename="$(find hector_sensors_description)/urdf/asus_camera.urdf.xacro" />
+		<!---<xacro:include filename="$(find hector_sensors_description)/urdf/asus_camera.urdf.xacro" /> -->
 
 		<xacro:hokuyo_utm30lx 
 			name="hokuyo" 
@@ -16,11 +16,11 @@
 			<origin xyz="0.0 0.0 ${base_height / 2 + 0.06}" rpy="0 0 0"/>
 		</xacro:hokuyo_utm30lx>
         
-		<xacro:asus_camera 
+		<!--<xacro:asus_camera 
 			parent="${base_name}" 
 			name="camera">
 			<origin xyz="${base_length + .1} 0.0 ${base_height / 2 + .01}" rpy="0 0 0"/>
-		</xacro:asus_camera>
+		</xacro:asus_camera>-->
 
 	<gazebo>
 		<plugin name="imu_controller" filename="libhector_gazebo_ros_imu.so">
