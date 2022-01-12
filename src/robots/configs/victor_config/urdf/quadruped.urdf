@@ -39,7 +39,7 @@
     <material>Gazebo/FlatBlack</material>
   </gazebo>
   <joint name="hokuyo_joint" type="fixed">
-    <origin rpy="0 0 0" xyz="0.0 0.0 0.045"/>
+    <origin rpy="0 0 0" xyz="0.0 0.0 0.065"/>
     <parent link="base_link"/>
     <child link="hokuyo_frame"/>
   </joint>
@@ -96,7 +96,7 @@
     </sensor>
   </gazebo>
   <joint name="camera_joint" type="fixed">
-    <origin rpy="0 0 0" xyz="0.175 0.0 0.015"/>
+    <origin rpy="0 0 0" xyz="0.275 0.0 0.015"/>
     <parent link="base_link"/>
     <child link="camera_link"/>
   </joint>

@@ -5,8 +5,8 @@
       <author>Blender User</author>
       <authoring_tool>Blender 3.0.0 commit date:2021-12-02, commit time:18:35, hash:f1cca3055776</authoring_tool>
     </contributor>
-    <created>2022-01-12T14:01:40</created>
-    <modified>2022-01-12T14:01:40</modified>
+    <created>2022-01-12T14:03:44</created>
+    <modified>2022-01-12T14:03:44</modified>
     <unit name="meter" meter="1"/>
     <up_axis>Z_UP</up_axis>
   </asset>
@@ -48,7 +48,7 @@
   <library_visual_scenes>
     <visual_scene id="Scene" name="Scene">
       <node id="lef2" name="lef2" type="NODE">
-        <matrix sid="transform">1.94778e-4 6.69149e-4 7.17148e-4 -5.96046e-8 9.59566e-4 -2.81476e-4 2.01843e-6 -1.19209e-7 2.03211e-4 6.87758e-4 -6.96918e-4 0 0 0 0 1</matrix>
+        <matrix sid="transform">-1.94778e-4 -6.69149e-4 -7.17148e-4 -5.96046e-8 -9.59566e-4 2.81476e-4 -2.01832e-6 -1.19209e-7 2.03211e-4 6.87758e-4 -6.96918e-4 0 0 0 0 1</matrix>
         <instance_geometry url="#lef2-mesh" name="lef2"/>
       </node>
     </visual_scene>

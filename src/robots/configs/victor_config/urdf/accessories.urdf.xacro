@@ -13,13 +13,13 @@
 			ray_count="1040" 
 			min_angle="130" 
 			max_angle="-130" >
-			<origin xyz="0.0 0.0 ${base_height / 2 + 0.04}" rpy="0 0 0"/>
+			<origin xyz="0.0 0.0 ${base_height / 2 + 0.06}" rpy="0 0 0"/>
 		</xacro:hokuyo_utm30lx>
         
 		<xacro:asus_camera 
 			parent="${base_name}" 
 			name="camera">
-			<origin xyz="${base_length / 1} 0.0 ${base_height / 2 + .01}" rpy="0 0 0"/>
+			<origin xyz="${base_length + .1} 0.0 ${base_height / 2 + .01}" rpy="0 0 0"/>
 		</xacro:asus_camera>
 
 	<gazebo>
