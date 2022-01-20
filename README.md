@@ -23,4 +23,4 @@ ros-melodic-map-server
 change \<arg name="laser" default="sim"/\> to \<arg name="laser" default="rplidar"/\> in bringup.launch, currently facing VM /dev/ttyUSB0 issue\
 dynamic obstacle avoidance implementation\
 tune pid values\
-figure, configure, and assembly bot in real life\
+configure, and assembly bot in real life
